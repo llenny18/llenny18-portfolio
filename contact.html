@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -34,54 +35,151 @@
         <div class="loader"></div>
     </div>
 
+    
     <!-- Header Section Begin -->
     <header class="header">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="img/icon.jpg" alt=""  class="profile_pic"></a>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-3 col-md-3">
+            <div class="header__logo">
+              <a href="./index.html"
+                ><img src="img/icon.jpg" alt="" class="profile_pic"
+              /></a>
+            </div>
+          </div>
+          <div class="col-lg-9 col-md-9">
+            <div class="header__nav">
+              <nav class="header__menu mobile-menu">
+                <ul>
+                  <li><a href="./index.html">Home</a></li>
+                  <li class="active"><a href="./contact.html">Contact Information</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+      </div>
+    </header>
+
+    <!-- Header Section Begin -->
+    <section class="hero">
+        <div class="hero-particles">
+            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+            <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
+            <div class="particle" style="left: 60%; animation-delay: 10s;"></div>
+            <div class="particle" style="left: 70%; animation-delay: 12s;"></div>
+            <div class="particle" style="left: 80%; animation-delay: 14s;"></div>
+            <div class="particle" style="left: 90%; animation-delay: 16s;"></div>
+        </div>
+
+        <div class="floating-icons">
+            <div class="floating-icon"><i class="fas fa-code"></i></div>
+            <div class="floating-icon"><i class="fas fa-laptop-code"></i></div>
+            <div class="floating-icon"><i class="fas fa-database"></i></div>
+            <div class="floating-icon"><i class="fas fa-mobile-alt"></i></div>
+        </div>
+
+        <div class="container">
+            <div class="hero__content">
+                <div class="hero__text">
+                    <h1 class="hero__title">
+                        <i class="fas fa-rocket" style="color: #ff6b6b; margin-right: 15px;"></i>
+                        CONTACT INFORMATION
+                    </h1>
+                
+                    <div class="hero__buttons">
+                        <a href="#portfolio" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i>
+                            View My Contact Information </a>
+                    
                     </div>
                 </div>
-                <div class="col-lg-9 col-md-9">
-                    <div class="header__nav">
-                        <nav class="header__menu mobile-menu">
-                            <ul>
-                              <li ><a href="./index.html">Home</a></li>
-                                <li class="active"><a href="./contact.html">Contact Information</a></li>
-                            </ul>
-                        </nav>
-                      
+
+                <div class="hero__visual">
+                    <div class="hero__avatar">
+                        <i class="fas fa-user-tie"></i>
                     </div>
                 </div>
             </div>
-            <div id="mobile-menu-wrap"></div>
         </div>
-    </header>
-    <!-- Header Section End -->
 
-    <!-- Breadcrumb Begin -->
-    <div class="breadcrumb-area set-bg" data-setbg="img/bg-1.jpg">
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for buttons
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Add hover effects to stat items
+            const statItems = document.querySelectorAll('.stat-item');
+            statItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.05)';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Parallax effect for floating icons
+            let mouseX = 0, mouseY = 0;
+            document.addEventListener('mousemove', function(e) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            function animateFloatingIcons() {
+                const icons = document.querySelectorAll('.floating-icon');
+                icons.forEach((icon, index) => {
+                    const speed = (index + 1) * 0.01;
+                    const x = mouseX * speed;
+                    const y = mouseY * speed;
+                    icon.style.transform = `translate(${x}px, ${y}px)`;
+                });
+                requestAnimationFrame(animateFloatingIcons);
+            }
+            animateFloatingIcons();
+        });
+    </script>
+
+
+
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>Contact Information</h2>
-                        <div class="breadcrumb__option">
-                            <a href="#"><i class="fa fa-home"></i> Home</a>
-                            <span>More Information</span>
-                        </div>
+                <div class="col-lg-12">
+                    <div class="contact__map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123911.10660521436!2d121.08616426469665!3d13.945378303196126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd13576170055f%3A0xe6da25b39082662a!2sLipa%20City%2C%20Batangas!5e0!3m2!1sen!2sph!4v1752162971274!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
+          
         </div>
-    </div>
+    </section>
 
-
-   
+    
 
     <!-- Footer Section Begin -->
-    <footer class="footer">
+    <footer class="footer" id="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2 col-md-2">
@@ -131,22 +229,6 @@
            
         </div>
     </footer>
-    <!-- Footer Section End -->
-    <!-- Breadcrumb End -->
-
-    <!-- Contact Section Begin -->
-    <section class="contact spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="contact__map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123911.10660521436!2d121.08616426469665!3d13.945378303196126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd13576170055f%3A0xe6da25b39082662a!2sLipa%20City%2C%20Batangas!5e0!3m2!1sen!2sph!4v1752162971274!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-            </div>
-          
-        </div>
-    </section>
     <!-- Contact Section End -->
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>

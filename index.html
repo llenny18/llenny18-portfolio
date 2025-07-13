@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    
   </head>
 
   <body>
@@ -63,822 +66,491 @@
 
     <!-- Header Section End -->
     <!-- Hero Section Begin -->
-    <section class="hero set-bg" data-setbg="img/bg-1.jpg">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="hero__text">
-              <div class="section-title">
-                <h2>ALLEN EIDRIAN S. RAMOS'S Portfolio</h2>
-                <p>
-                  Hi, I’m a Freelance Full-Stack Developer since 2018, a
-                  passionate and results-driven Full-Stack Web Developer who
-                  turns complex problems into clean, efficient, and scalable
-                  digital solutions. Whether you need a dynamic e-commerce
-                  platform, an elegant portfolio site, or a powerful admin
-                  dashboard — I design, build, and launch it with precision and
-                  purpose.
-                </p>
-              </div>
-            </div>
-          </div>
+   <section class="hero">
+        <div class="hero-particles">
+            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+            <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
+            <div class="particle" style="left: 60%; animation-delay: 10s;"></div>
+            <div class="particle" style="left: 70%; animation-delay: 12s;"></div>
+            <div class="particle" style="left: 80%; animation-delay: 14s;"></div>
+            <div class="particle" style="left: 90%; animation-delay: 16s;"></div>
         </div>
-      </div>
+
+        <div class="floating-icons">
+            <div class="floating-icon"><i class="fas fa-code"></i></div>
+            <div class="floating-icon"><i class="fas fa-laptop-code"></i></div>
+            <div class="floating-icon"><i class="fas fa-database"></i></div>
+            <div class="floating-icon"><i class="fas fa-mobile-alt"></i></div>
+        </div>
+
+        <div class="container">
+            <div class="hero__content">
+                <div class="hero__text">
+                    <h1 class="hero__title">
+                        <i class="fas fa-rocket" style="color: #ff6b6b; margin-right: 15px;"></i>
+                        ALLEN EIDRIAN S. RAMOS
+                    </h1>
+                    <p class="hero__subtitle">
+                        <i class="fas fa-star" style="color: #ffd700; margin-right: 10px;"></i>
+                        Full-Stack Developer & Digital Innovator 
+                    </p>
+                    <p class="hero__description">
+                        <i class="fas fa-lightbulb" style="color: #4ecdc4; margin-right: 10px;"></i>
+                        Passionate and results-driven Full-Stack Web Developer who turns complex problems into clean, efficient, and scalable digital solutions. Whether you need a dynamic e-commerce platform, an elegant portfolio site, or a powerful admin dashboard — I design, build, and launch it with precision and purpose.
+                    </p>
+
+                    <div class="hero__stats">
+                        <div class="stat-item">
+                            <span class="stat-number">7+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Projects Done</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+
+                    <div class="hero__buttons">
+                        <a href="#portfolio" class="btn btn-primary">
+                            <i class="fas fa-briefcase"></i>
+                            View My Work
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero__visual">
+                    <div class="hero__avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
     </section>
+
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for buttons
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Add hover effects to stat items
+            const statItems = document.querySelectorAll('.stat-item');
+            statItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.05)';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Parallax effect for floating icons
+            let mouseX = 0, mouseY = 0;
+            document.addEventListener('mousemove', function(e) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            function animateFloatingIcons() {
+                const icons = document.querySelectorAll('.floating-icon');
+                icons.forEach((icon, index) => {
+                    const speed = (index + 1) * 0.01;
+                    const x = mouseX * speed;
+                    const y = mouseY * speed;
+                    icon.style.transform = `translate(${x}px, ${y}px)`;
+                });
+                requestAnimationFrame(animateFloatingIcons);
+            }
+            animateFloatingIcons();
+        });
+    </script>
     <!-- Hero Section End -->
 
-    <!-- Most Search Section Begin -->
-    <section class="most-search spad">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="section-title">
-              <h2>Freelancing Developed Websites (2018-2025)</h2>
-              <p>
-                A collection of practical and academic projects showcasing
-                skills in full-stack development, IoT integration, and data
-                analytics. These repositories reflect my passion for building
-                real-world solutions using technologies like Django, Arduino,
-                MySQL, and modern JavaScript frameworks.
-              </p>
-              <hr>
-              <p>
-                <b>
-                Note:
-                </b>
-                <i>
-                 Due to privacy agreements with clients, partnered companies, and capstone/thesis students, domain names and GitHub repositories are not publicly displayed. Additionally, not all websites I’ve developed are permitted by clients to be included in this portfolio. However, select screenshots and system previews are showcased to illustrate the features, design, and functionality of the allowed projects.
-                </i>
-              </p>
+    <section class="portfolio-section" id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2><i class="fas fa-code"></i> Freelancing Developed Websites (2018-2025)</h2>
+                        <p>
+                            A collection of practical and academic projects showcasing
+                            skills in full-stack development, IoT integration, and data
+                            analytics. These repositories reflect my passion for building
+                            real-world solutions using technologies like Django, Arduino,
+                            MySQL, and modern JavaScript frameworks.
+                        </p>
+                        <div class="privacy-note">
+                            <p>
+                                <i class="fas fa-shield-alt"></i>
+                                <strong>Note:</strong>
+                                Due to privacy agreements with clients, partnered companies, and capstone/thesis students, domain names and GitHub repositories are not publicly displayed. Additionally, not all websites I've developed are permitted by clients to be included in this portfolio. However, select screenshots and system previews are showcased to illustrate the features, design, and functionality of the allowed projects.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#iot-tab" role="tab">
+                                <i class="fas fa-microchip category-icon"></i>
+                                IoT & Agricultural Control
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#government-tab" role="tab">
+                                <i class="fas fa-building category-icon"></i>
+                                Government/Private Portal
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#educational-tab" role="tab">
+                                <i class="fas fa-graduation-cap category-icon"></i>
+                                Educational Platform
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#booking-tab" role="tab">
+                                <i class="fas fa-calendar-alt category-icon"></i>
+                                Dispatch/Booking System
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content">
+                        <!-- IoT & Agricultural Control Tab -->
+                        <div class="tab-pane fade show active" id="iot-tab" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="project-card">
+                                        <div class="project-image">
+                                            <img src="./img/hydros1.png" alt="HYDRO-ATLANTIS">
+                                            <div class="tech-badge">
+                                                <i class="fab fa-python" style="color: #3776ab; font-size: 24px;"></i>
+                                            </div>
+                                            <div class="year-badge">2025</div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h5 class="project-title">
+                                                <i class="fas fa-seedling"></i>
+                                                HYDRO-ATLANTIS
+                                            </h5>
+                                            <p class="project-description">
+                                                This project integrates Django, MySQL, and Machine Learning (LSTM) to monitor and control a hydroponics system. It collects real-time sensor data from Greenhouse, Water Test Bed, Water Bio Filter, and Fish Tank, predicts water quality trends, and schedules sensor maintenance.
+                                            </p>
+                                            <div class="tech-stack">
+                                                <h6><i class="fas fa-tools"></i> Technology Stack:</h6>
+                                                <div class="tech-list">
+                                                    <span class="tech-item">Django</span>
+                                                    <span class="tech-item">VPS</span>
+                                                    <span class="tech-item">SSL</span>
+                                                    <span class="tech-item">Nginx</span>
+                                                    <span class="tech-item">Bootstrap</span>
+                                                    <span class="tech-item">MySQL</span>
+                                                    <span class="tech-item">Jetson Nano</span>
+                                                    <span class="tech-item">IoT Sensors</span>
+                                                    <span class="tech-item">Machine Learning</span>
+                                                </div>
+                                            </div>
+                                            <button class="view-more-btn" data-bs-toggle="modal" data-bs-target="#modal-1">
+                                                <i class="fas fa-images"></i>
+                                                View Gallery
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Government/Private Portal Tab -->
+                        <div class="tab-pane fade" id="government-tab" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="project-card">
+                                        <div class="project-image">
+                                            <img src="./img/pos_inv1.png" alt="Umandap Groceries">
+                                            <div class="tech-badge">
+                                                <i class="fab fa-laravel" style="color: #FF2D20; font-size: 24px;"></i>
+                                            </div>
+                                            <div class="year-badge">2021</div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h5 class="project-title">
+                                                <i class="fas fa-cash-register"></i>
+                                                Umandap Groceries Management System
+                                            </h5>
+                                            <p class="project-description">
+                                                A POS with inventory management system featuring two user levels: Admin and Employee. The system updates inventory automatically after each sale and generates receipts and daily reports with role-based authentication.
+                                            </p>
+                                            <div class="tech-stack">
+                                                <h6><i class="fas fa-tools"></i> Technology Stack:</h6>
+                                                <div class="tech-list">
+                                                    <span class="tech-item">Laravel</span>
+                                                    <span class="tech-item">MySQL</span>
+                                                    <span class="tech-item">Bootstrap</span>
+                                                    <span class="tech-item">JavaScript</span>
+                                                    <span class="tech-item">HTML5</span>
+                                                    <span class="tech-item">CSS3</span>
+                                                </div>
+                                            </div>
+                                            <button class="view-more-btn" data-bs-toggle="modal" data-bs-target="#modal-2">
+                                                <i class="fas fa-images"></i>
+                                                View Gallery
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="project-card">
+                                        <div class="project-image">
+                                            <img src="./img/batsweb1.png" alt="Batangas Province">
+                                            <div class="tech-badge">
+                                                <i class="fab fa-html5" style="color: #E34F26; font-size: 24px;"></i>
+                                            </div>
+                                            <div class="year-badge">2022</div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h5 class="project-title">
+                                                <i class="fas fa-globe"></i>
+                                                Batangas Province Website
+                                            </h5>
+                                            <p class="project-description">
+                                                The improved official website of Batangas Province featuring modern design, mobile responsiveness, and updated content. Enhances transparency and public engagement with tourism highlights and downloadable forms.
+                                            </p>
+                                            <div class="tech-stack">
+                                                <h6><i class="fas fa-tools"></i> Technology Stack:</h6>
+                                                <div class="tech-list">
+                                                    <span class="tech-item">HTML5</span>
+                                                    <span class="tech-item">CSS3</span>
+                                                    <span class="tech-item">JavaScript</span>
+                                                </div>
+                                            </div>
+                                            <button class="view-more-btn" data-bs-toggle="modal" data-bs-target="#modal-3">
+                                                <i class="fas fa-images"></i>
+                                                View Gallery
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="project-card">
+                                        <div class="project-image">
+                                            <img src="./img/fms1.png" alt="MGS Construction">
+                                            <div class="tech-badge">
+                                                <i class="fab fa-laravel" style="color: #FF2D20; font-size: 24px;"></i>
+                                            </div>
+                                            <div class="year-badge">2021</div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h5 class="project-title">
+                                                <i class="fas fa-calculator"></i>
+                                                MGS Construction Financial System
+                                            </h5>
+                                            <p class="project-description">
+                                                A comprehensive financial management platform for construction companies. Admins can oversee cash flow, generate budget plans, manage balance sheets, handle payroll, and maintain inventory records.
+                                            </p>
+                                            <div class="tech-stack">
+                                                <h6><i class="fas fa-tools"></i> Technology Stack:</h6>
+                                                <div class="tech-list">
+                                                    <span class="tech-item">Laravel</span>
+                                                    <span class="tech-item">MySQL</span>
+                                                    <span class="tech-item">Linux/Ubuntu</span>
+                                                    <span class="tech-item">JavaScript</span>
+                                                </div>
+                                            </div>
+                                            <button class="view-more-btn" data-bs-toggle="modal" data-bs-target="#modal-4">
+                                                <i class="fas fa-images"></i>
+                                                View Gallery
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="project-card">
+                                        <div class="project-image">
+                                            <img src="./img/bmis1.png" alt="BMIS System">
+                                            <div class="tech-badge">
+                                                <i class="fab fa-laravel" style="color: #FF2D20; font-size: 24px;"></i>
+                                            </div>
+                                            <div class="year-badge">2024</div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h5 class="project-title">
+                                                <i class="fas fa-users"></i>
+                                                Batangas Province MIS
+                                            </h5>
+                                            <p class="project-description">
+                                                A comprehensive digital platform with facial recognition login for employees and secure access for administrators. Features employee management, attendance tracking, leave monitoring, and event coordination.
+                                            </p>
+                                            <div class="tech-stack">
+                                                <h6><i class="fas fa-tools"></i> Technology Stack:</h6>
+                                                <div class="tech-list">
+                                                    <span class="tech-item">Laravel</span>
+                                                    <span class="tech-item">MySQL</span>
+                                                    <span class="tech-item">Facial Recognition</span>
+                                                    <span class="tech-item">Linux/Ubuntu</span>
+                                                </div>
+                                            </div>
+                                            <button class="view-more-btn" data-bs-toggle="modal" data-bs-target="#modal-5">
+                                                <i class="fas fa-images"></i>
+                                                View Gallery
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Educational Platform Tab -->
+                        <div class="tab-pane fade" id="educational-tab" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="project-card">
+                                        <div class="project-image">
+                                            <img src="./img/hist1.png" alt="Historiko">
+                                            <div class="tech-badge">
+                                                <i class="fab fa-react" style="color: #61DAFB; font-size: 24px;"></i>
+                                            </div>
+                                            <div class="year-badge">2025</div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h5 class="project-title">
+                                                <i class="fas fa-book"></i>
+                                                Historiko
+                                            </h5>
+                                            <p class="project-description">
+                                                A bilingual educational platform teaching Filipino history in English and Tagalog. Features AI chatbot, dark/light mode, and Study Mode with animated AI character narration for interactive learning.
+                                            </p>
+                                            <div class="tech-stack">
+                                                <h6><i class="fas fa-tools"></i> Technology Stack:</h6>
+                                                <div class="tech-list">
+                                                    <span class="tech-item">React</span>
+                                                    <span class="tech-item">Vite</span>
+                                                    <span class="tech-item">Supabase</span>
+                                                    <span class="tech-item">AI Chatbot</span>
+                                                    <span class="tech-item">Vercel</span>
+                                                </div>
+                                            </div>
+                                            <button class="view-more-btn" data-bs-toggle="modal" data-bs-target="#modal-9">
+                                                <i class="fas fa-images"></i>
+                                                View Gallery
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="project-card">
+                                        <div class="project-image">
+                                            <img src="./img/agoo1.png" alt="Agoo LCHS">
+                                            <div class="tech-badge">
+                                                <i class="fab fa-laravel" style="color: #FF2D20; font-size: 24px;"></i>
+                                            </div>
+                                            <div class="year-badge">2019</div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h5 class="project-title">
+                                                <i class="fas fa-school"></i>
+                                                Agoo LCHS Learning Management System
+                                            </h5>
+                                            <p class="project-description">
+                                                Comprehensive LMS with automatic grade calculation, schedule management, and email notifications. Features user calendar for class schedules, deadlines, and school events.
+                                            </p>
+                                            <div class="tech-stack">
+                                                <h6><i class="fas fa-tools"></i> Technology Stack:</h6>
+                                                <div class="tech-list">
+                                                    <span class="tech-item">Laravel</span>
+                                                    <span class="tech-item">MySQL</span>
+                                                    <span class="tech-item">Email System</span>
+                                                    <span class="tech-item">Linux/Ubuntu</span>
+                                                </div>
+                                            </div>
+                                            <button class="view-more-btn" data-bs-toggle="modal" data-bs-target="#modal-10">
+                                                <i class="fas fa-images"></i>
+                                                View Gallery
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Dispatch/Booking System Tab -->
+                        <div class="tab-pane fade" id="booking-tab" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="project-card">
+                                        <div class="project-image">
+                                            <img src="./img/tric1.png" alt="Tric Dispatching">
+                                            <div class="tech-badge">
+                                                <i class="fab fa-laravel" style="color: #FF2D20; font-size: 24px;"></i>
+                                            </div>
+                                            <div class="year-badge">2023</div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h5 class="project-title">
+                                                <i class="fas fa-motorcycle"></i>
+                                                Tric-Dispatching Website
+                                            </h5>
+                                            <p class="project-description">
+                                                A comprehensive dispatch system for tricycle services with real-time tracking, booking management, and driver coordination. Features automated dispatching and customer booking interface.
+                                            </p>
+                                            <div class="tech-stack">
+                                                <h6><i class="fas fa-tools"></i> Technology Stack:</h6>
+                                                <div class="tech-list">
+                                                    <span class="tech-item">Laravel</span>
+                                                    <span class="tech-item">MySQL</span>
+                                                    <span class="tech-item">Real-time Tracking</span>
+                                                    <span class="tech-item">Bootstrap</span>
+                                                </div>
+                                            </div>
+                                            <button class="view-more-btn" data-bs-toggle="modal" data-bs-target="#modal-6">
+                                                <i class="fas fa-images"></i>
+                                                View Gallery
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="most__search__tab">
-              <ul class="nav nav-tabs" role="tablist">
-                <li class="nav-item">
-                  <a
-                    class="nav-link active"
-                    data-toggle="tab"
-                    href="#tabs-1"
-                    role="tab"
-                  >
-                    IoT & Agricultural Control
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    data-toggle="tab"
-                    href="#tabs-2"
-                    role="tab"
-                  >
-                    Government/Private Portal
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    data-toggle="tab"
-                    href="#tabs-3"
-                    role="tab"
-                  >
-                    Educational Platform
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    data-toggle="tab"
-                    href="#tabs-4"
-                    role="tab"
-                  >
-                    Dispatch/Booking System
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="tab-content">
-              <div class="tab-pane active" id="tabs-1" role="tabpanel">
-                <div class="row">
-                  <div class="col-lg-6 col-md-6">
-                    <div class="listing__item">
-                      <div
-                        class="listing__item__pic set-bg"
-                        data-setbg="img/hydros1.png"
-                      >
-                        <img
-                          src="img/django.png"
-                          alt=""
-                          style="border: 3px solid white"
-                        />
-                        <div class="listing__item__pic__tag">2025</div>
-                      </div>
-                      <div class="listing__item__text">
-                        <div class="listing__item__text__inside">
-                          <h5>HYDRO-ATLANTIS</h5>
-
-                          <ul>
-                            <li>
-                              This project integrates Django, MySQL, and Machine
-                              Learning (LSTM) to monitor and control a
-                              hydroponics system. It collects real-time sensor
-                              data from Greenhouse, Water Test Bed, Water Bio
-                              Filter, and Fish Tank, predicts water quality
-                              trends, and schedules sensor maintenance.
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="listing__item__text__info">
-                          <div class="listing__item__text__info__left">
-                            <span> Technology Used: </span>
-                            <br />
-                            <span>
-                              <i>
-                                Django | VPS | SSL | Nginx| Bootstrap | HTML5 |
-                                CSS3 | JS | MySQL | Jetson Nano | Water Quality
-                                Sensors | Actuators | Machine Learning</i
-                              ></span
-                            >
-                            <hr />
-                          </div>
-                          <hr />
-                          <div class="listing__item__text__info__right">
-                            
-                             <button
-      type="button"
-      class="btn btn-primary"
-      data-toggle="modal"
-      data-target=".modal-1"
-    >
-      View More Image
-    </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tabs-2" role="tabpanel">
-                <div class="row">
-                  <div class="col-lg-6 col-md-6">
-                    <div class="listing__item">
-                      <div
-                        class="listing__item__pic set-bg"
-                        data-setbg="img/pos_inv1.png"
-                      >
-                        <img src="img/laravel.png" alt="" />
-                        <div class="listing__item__pic__tag">2021</div>
-                      </div>
-                      <div class="listing__item__text">
-                        <div class="listing__item__text__inside">
-                          <h5>
-                            Umandap Groceries Integrated Management System
-                          </h5>
-
-                          <ul>
-                            <li>
-                              A POS with inventory management system is a
-                              web-based platform used to process sales and track
-                              stock levels in real-time. It features two user
-                              levels: Admin, who can manage users, products,
-                              sales reports, and settings; and Employee, who can
-                              access the POS to process transactions but has
-                              limited permissions. The system updates inventory
-                              automatically after each sale and generates
-                              receipts and daily reports. Role-based
-                              authentication ensures secure access and separates
-                              responsibilities between administrative and sales
-                              staff.
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="listing__item__text__info">
-                          <div class="listing__item__text__info__left">
-                            <span> Technology Used: </span>
-                            <br />
-                            <span>
-                              <i>
-                                Django | VPS | SSL | Nginx| Bootstrap | HTML5 |
-                                CSS3 | JS | MySQL | Jetson Nano | Water Quality
-                                Sensors | Actuators | Machine Learning</i
-                              ></span
-                            >
-                            <hr />
-                          </div>
-                          <hr />
-                          <div class="listing__item__text__info__right">
-                             <button
-      type="button"
-      class="btn btn-primary"
-      data-toggle="modal"
-      data-target=".modal-2"
-    >
-      View More Image
-    </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6">
-                    <div class="listing__item">
-                      <div
-                        class="listing__item__pic set-bg"
-                        data-setbg="img/batsweb1.png"
-                      >
-                        <img src="img/html.jpeg" alt="" />
-                        <div class="listing__item__pic__tag top_rate">2022</div>
-                      </div>
-                      <div class="listing__item__text">
-                        <div class="listing__item__text__inside">
-                          <h5>Batangas Province Improved Website</h5>
-
-                          <ul>
-                            <li>
-                              The improved official website of Batangas Province
-                              is a modern, user-friendly platform designed to
-                              provide residents and visitors with easy access to
-                              government services, news, and vital information.
-                              Featuring a clean interface, mobile
-                              responsiveness, and updated content, the site
-                              enhances transparency and public engagement. From
-                              tourism highlights to downloadable forms and
-                              emergency alerts, everything you need about
-                              Batangas is now just a click away.
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="listing__item__text__info">
-                          <div class="listing__item__text__info__left">
-                            <span> Technology Used: </span>
-                            <br />
-                            <span> <i> HTML5 | CSS3 | JS </i></span>
-                            <hr />
-                          </div>
-                          <hr />
-                          <div class="listing__item__text__info__right">
-                             <button
-      type="button"
-      class="btn btn-primary"
-      data-toggle="modal"
-      data-target=".modal-3"
-    >
-      View More Image
-    </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6">
-                    <div class="listing__item">
-                      <div
-                        class="listing__item__pic set-bg"
-                        data-setbg="img/fms1.png"
-                      >
-                        <img src="img/laravel.png" alt="" />
-                        <div class="listing__item__pic__tag">2021</div>
-                      </div>
-                      <div class="listing__item__text">
-                        <div class="listing__item__text__inside">
-                          <h5>MGS Construction Financial Management System</h5>
-
-                          <ul>
-                            <li>
-                              This platform is designed to streamline and manage
-                              an organization’s finances with dedicated user
-                              levels for employees and administrators. Admins
-                              can oversee cash flow, generate budget plans,
-                              manage balance sheets, handle payroll, and
-                              maintain inventory records. Employees can access
-                              relevant financial data, update project
-                              information, and manage their staff profiles. The
-                              system ensures accurate financial tracking, secure
-                              data access, and efficient resource allocation for
-                              smooth business operations.
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="listing__item__text__info">
-                          <div class="listing__item__text__info__left">
-                            <span> Technology Used: </span>
-                            <br />
-                            <span>
-                              <i>
-                                Laravel | HTML5 | CSS3 | JS | MySQL |
-                                Linux/Ubuntu</i
-                              ></span
-                            >
-                            <hr />
-                          </div>
-                          <hr />
-                          <div class="listing__item__text__info__right">
-                             <button
-      type="button"
-      class="btn btn-primary"
-      data-toggle="modal"
-      data-target=".modal-4"
-    >
-      View More Image
-    </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6">
-                    <div class="listing__item">
-                      <div
-                        class="listing__item__pic set-bg"
-                        data-setbg="img/bmis1.png"
-                      >
-                        <img src="img/laravel.png" alt="" />
-                        <div class="listing__item__pic__tag">2024</div>
-                      </div>
-                      <div class="listing__item__text">
-                        <div class="listing__item__text__inside">
-                          <h5>
-                            Batangas Province Management Information System
-                          </h5>
-
-                          <ul>
-                            <li>
-                              Batangas Province Management Information System
-                              (MIS) is a comprehensive digital platform designed
-                              to streamline administrative operations and
-                              personnel management across the province. The
-                              system features a facial recognition login for
-                              employees and secure credential-based access for
-                              administrators, ensuring both convenience and
-                              security. It enables efficient employee
-                              information management, real-time attendance
-                              tracking, leave credit monitoring, and event
-                              coordination. Employees can seamlessly apply for
-                              leave, while administrators have full control over
-                              data oversight, approval workflows, and
-                              organizational records management, making it a
-                              powerful tool for modern governance.
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="listing__item__text__info">
-                          <div class="listing__item__text__info__left">
-                            <span> Technology Used: </span>
-                            <br />
-                            <span>
-                              <i>
-                                Laravel | HTML5 | CSS3 | JS | MySQL |
-                                Linux/Ubuntu</i
-                              ></span
-                            >
-                            <hr />
-                          </div>
-                          <hr />
-                          <div class="listing__item__text__info__right">
-                             <button
-      type="button"
-      class="btn btn-primary"
-      data-toggle="modal"
-      data-target=".modal-5"
-    >
-      View More Image
-    </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6">
-                    <div class="listing__item">
-                      <div
-                        class="listing__item__pic set-bg"
-                        data-setbg="img/hosp1.png"
-                      >
-                        <img src="img/laravel.png" alt="" />
-                        <div class="listing__item__pic__tag hot_deal">2023</div>
-                      </div>
-                      <div class="listing__item__text">
-                        <div class="listing__item__text__inside">
-                          <h5>TAAL Batangas RHU System</h5>
-
-                          <ul>
-                            <li>
-                              The Taal RHU Batangas Website is an integrated
-                              Hospital and Rural Health Unit (RHU) Management
-                              Information System specifically designed for
-                              healthcare centers in Batangas. Its primary focus
-                              is on managing pregnancy-related records and
-                              services for women, including prenatal checkups,
-                              medical history, and pregnancy forms. The system
-                              allows healthcare workers to register and monitor
-                              patient data, track maternal care, generate
-                              reports, and manage appointment schedules. A key
-                              feature of the system is its automated SMS and
-                              email notifications, which are sent to pregnant
-                              patients to remind them about upcoming prenatal
-                              appointments, lab tests, and follow-up checkups.
-                              This improves patient compliance and maternal
-                              health outcomes. The system also securely stores
-                              digital records, making it easy for doctors and
-                              nurses to access past consultations, fetal
-                              development data, and medical forms in one
-                              centralized dashboard.
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="listing__item__text__info">
-                          <div class="listing__item__text__info__left">
-                            <span> Technology Used: </span>
-                            <br />
-                            <span>
-                              <i>
-                                Laravel | HTML5 | CSS3 | JS | MySQL |
-                                Linux/Ubuntu</i
-                              ></span
-                            >
-                            <hr />
-                          </div>
-                          <hr />
-                          <div class="listing__item__text__info__right">
-                             <button
-      type="button"
-      class="btn btn-primary"
-      data-toggle="modal"
-      data-target=".modal-6"
-    >
-      View More Image
-    </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6">
-                    <div class="listing__item">
-                      <div
-                        class="listing__item__pic set-bg"
-                        data-setbg="img/jru1.png"
-                      >
-                        <img src="img/django.png" alt="" />
-                        <div class="listing__item__pic__tag hot_deal">2025</div>
-                      </div>
-                      <div class="listing__item__text">
-                        <div class="listing__item__text__inside">
-                          <h5>JRU-Connect Advertisement Website</h5>
-
-                          <ul>
-                            <li>
-                              This is a classified advertisement platform for
-                              Jose Rizal University (JRU) students that allows
-                              users to post and promote their products for sale.
-                              Students can upload product listings with images
-                              and details, while others can browse, filter,
-                              comment on, review, and purchase these products
-                              directly through the site. The platform includes a
-                              built-in messaging system for direct communication
-                              between buyers and sellers. On the admin side,
-                              there is a dashboard that provides analytics such
-                              as user activity, product trends, and sales
-                              insights, along with full control over user
-                              accounts, product listings, and advertisement
-                              approvals or removals.
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="listing__item__text__info">
-                          <div class="listing__item__text__info__left">
-                            <span> Technology Used: </span>
-                            <br />
-                            <span>
-                              <i>
-                                Django | VPS | SSL | Nginx| Bootstrap | HTML5 |
-                                CSS3 | JS | MySQL | Machine Learning</i
-                              ></span
-                            >
-                            <hr />
-                          </div>
-                          <hr />
-                          <div class="listing__item__text__info__right">
-                             <button
-      type="button"
-      class="btn btn-primary"
-      data-toggle="modal"
-      data-target=".modal-7"
-    >
-      View More Image
-    </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6">
-                    <div class="listing__item">
-                      <div
-                        class="listing__item__pic set-bg"
-                        data-setbg="img/pasig1.png"
-                      >
-                        <img src="img/django.png" alt="" />
-                        <div class="listing__item__pic__tag hot_deal">2025</div>
-                      </div>
-                      <div class="listing__item__text">
-                        <div class="listing__item__text__inside">
-                          <h5>Pasig Senior Citizen Management System</h5>
-
-                          <ul>
-                            <li>
-                              This system is a web-based health and
-                              administrative management platform designed to
-                              manage senior citizens, health workers, and
-                              administrative users. It allows authorized users
-                              to perform tasks such as creating profiles,
-                              sending SMS notifications, managing appointments,
-                              and generating reports or analytics. The system
-                              supports role-based actions like password resets,
-                              archival and restoration of deleted records, and
-                              predictive analytics for healthcare insights. It
-                              also features user authentication, activity
-                              tracking, and communication tools like
-                              announcements and logs to ensure efficient
-                              operation and accountability.
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="listing__item__text__info">
-                          <div class="listing__item__text__info__left">
-                            <span> Technology Used: </span>
-                            <br />
-                            <span>
-                              <i>
-                                Django | VPS | SSL | Nginx| Bootstrap | HTML5 |
-                                CSS3 | JS | MySQL | Machine Learning</i
-                              ></span
-                            >
-                            <hr />
-                          </div>
-                          <hr />
-                          <div class="listing__item__text__info__right">
-                             <button
-      type="button"
-      class="btn btn-primary"
-      data-toggle="modal"
-      data-target=".modal-8"
-    >
-      View More Image
-    </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tabs-3" role="tabpanel">
-                <div class="row">
-                  <div class="col-lg-6 col-md-6">
-                    <div class="listing__item">
-                      <div
-                        class="listing__item__pic set-bg"
-                        data-setbg="img/hist1.png"
-                      >
-                        <img src="img/react.png" alt="" />
-                        <div class="listing__item__pic__tag">2025</div>
-                      </div>
-                      <div class="listing__item__text">
-                        <div class="listing__item__text__inside">
-                          <h5>Historiko</h5>
-
-                          <ul>
-                            <li>
-                              This website is a bilingual educational platform
-                              that teaches Filipino history in both English and
-                              Tagalog, with an option to switch between
-                              languages anytime. It features a dark and light
-                              mode for comfortable viewing based on user
-                              preference. A built-in AI chatbot allows users to
-                              ask any questions about Philippine history for
-                              instant, intelligent answers. When Study Mode is
-                              activated, an animated AI character appears
-                              on-screen, speaking the lesson aloud while
-                              highlighting or displaying the words being
-                              narrated, creating an engaging, interactive
-                              learning experience.
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="listing__item__text__info">
-                          <div class="listing__item__text__info__left">
-                            <span> Technology Used: </span>
-                            <br />
-                            <span>
-                              <i>
-                                React | Vite | Supabase | AI Development | AI
-                                chatbot | Vercel
-                              </i></span
-                            >
-                            <hr />
-                          </div>
-                          <hr />
-                          <div class="listing__item__text__info__right">
-                             <button
-      type="button"
-      class="btn btn-primary"
-      data-toggle="modal"
-      data-target=".modal-9"
-    >
-      View More Image
-    </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6">
-                    <div class="listing__item">
-                      <div
-                        class="listing__item__pic set-bg"
-                        data-setbg="img/agoo1.png"
-                      >
-                        <img src="img/laravel.png" alt="" />
-                        <div class="listing__item__pic__tag">2019</div>
-                      </div>
-                      <div class="listing__item__text">
-                        <div class="listing__item__text__inside">
-                          <h5>Agoo LCHS Learning Management System</h5>
-
-                          <ul>
-                            <li>
-                              This website is a comprehensive Learning
-                              Management System (LMS) for students that not only
-                              automatically calculates grades based on exams,
-                              quizzes, and activities, but also offers robust
-                              schedule and department management. It organizes
-                              students into sections and subjects, allowing
-                              smooth handling of academic data across different
-                              departments. The system features a user calendar
-                              that displays individual class schedules,
-                              deadlines, and school events. Additionally, it
-                              includes an email notification system that alerts
-                              students and teachers about upcoming classes,
-                              deadlines, and important announcements.
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="listing__item__text__info">
-                          <div class="listing__item__text__info__left">
-                            <span> Technology Used: </span>
-                            <br />
-                            <span>
-                              <i>
-                                Laravel | HTML5 | CSS3 | JS | MySQL |
-                                Linux/Ubuntu</i
-                              ></span
-                            >
-                            <hr />
-                          </div>
-                          <hr />
-                          <div class="listing__item__text__info__right">
-                             <button
-      type="button"
-      class="btn btn-primary"
-      data-toggle="modal"
-      data-target=".modal-10"
-    >
-      View More Image
-    </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6">
-                    <div class="listing__item">
-                      <div
-                        class="listing__item__pic set-bg"
-                        data-setbg="img/osaias1.png"
-                      >
-                        <img src="img/laravel.png" alt="" />
-                        <div class="listing__item__pic__tag hot_deal">2020</div>
-                      </div>
-                      <div class="listing__item__text">
-                        <div class="listing__item__text__inside">
-                          <h5>Osias EF Learning Management System</h5>
-
-                          <ul>
-                            <li>
-                              This website is a Learning Management System (LMS)
-                              designed for students, allowing automatic
-                              calculation of grades based on their scores from
-                              exams, quizzes, assignments, and other academic
-                              activities. It includes a grade computation engine
-                              that updates student grades in real-time as scores
-                              are entered by teachers. The system also manages
-                              subjects, class schedules, and student sections,
-                              enabling efficient organization and tracking of
-                              student progress across different classes. With a
-                              centralized platform, it ensures smooth and
-                              accurate academic management for both educators
-                              and learners.
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="listing__item__text__info">
-                          <div class="listing__item__text__info__left">
-                            <span> Technology Used: </span>
-                            <br />
-                            <span>
-                              <i>
-                                Laravel | HTML5 | CSS3 | JS | MySQL |
-                                Linux/Ubuntu</i
-                              ></span
-                            >
-                            <hr />
-                          </div>
-                          <hr />
-                          <div class="listing__item__text__info__right">
-                             <button
-      type="button"
-      class="btn btn-primary"
-      data-toggle="modal"
-      data-target=".modal-11"
-    >
-      View More Image
-    </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tabs-4" role="tabpanel">
-                <div class="row">
-                  <div class="col-lg-6 col-md-6">
-                    <div class="listing__item">
-                      <div
-                        class="listing__item__pic set-bg"
-                        data-setbg="img/tric1.png"
-                      >
-                        <img src="img/laravel.png" alt="" />
-                        <div class="listing__item__pic__tag">2023</div>
-                      </div>
-                      <div class="listing__item__text">
-                        <div class="listing__item__text__inside">
-                          <h5>Tric-Dispatching Website</h5>
-
-                          <ul>
-                            <li>
-                              This website allows passengers in Lipa, Batangas
-                              to book a tricycle (trike) online with automatic
-                              fare calculation based on distance or location.
-                              Tricycle drivers can receive and accept booking
-                              requests in real time. For security, all users
-                              undergo email and phone number verification before
-                              using the platform. An administrator dashboard
-                              manages all users, drivers, bookings, and
-                              transactions for full system monitoring and
-                              reporting.
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="listing__item__text__info">
-                          <div class="listing__item__text__info__left">
-                            <span> Technology Used: </span>
-                            <br />
-                            <span>
-                              <i>
-                                Laravel | HTML5 | CSS3 | JS | MySQL |
-                                Linux/Ubuntu</i
-                              ></span
-                            >
-                            <hr />
-                          </div>
-                          <hr />
-                          <div class="listing__item__text__info__right">
-                             <button
-      type="button"
-      class="btn btn-primary"
-      data-toggle="modal"
-      data-target=".modal-12"
-    >
-      View More Image
-    </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
     <!-- Most Search Section End -->
 
    
@@ -1694,7 +1366,7 @@
     </div>
 
     <!-- Footer Section Begin -->
-    <footer class="footer">
+    <footer class="footer" id="contact">
       <div class="container">
         <div class="row">
           <div class="col-lg-2 col-md-2">
@@ -1727,15 +1399,15 @@
                     <a
                       href="https://www.facebook.com/ramos.esr/"
                       target="_blank"
-                      ><i class="fa fa-facebook"></i
+                      ><i class="fab fa-facebook"></i
                     ></a>
                     <a
                       href="https://www.linkedin.com/in/allen-eidrian-ramos-30b25722b/"
                       target="_blank"
-                      ><i class="fa fa-linkedin"></i
+                      ><i class="fab fa-linkedin"></i
                     ></a>
                     <a href="https://github.com/llenny18" target="_blank"
-                      ><i class="fa fa-github"></i
+                      ><i class="fab fa-github"></i
                     ></a>
                   </div>
                 </li>
